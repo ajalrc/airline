@@ -14,8 +14,8 @@ jobs:
 #action that just go to the github repository and checkout the code.
       - name: Run Django unit tests #this is just the name to know what is 
 #going on.
-        run: | #to run django unittest, I am installing here all the necessary
+        run: | 
+          pip3 install --user django
+          python manage.py test
+#to run django unittest, I am installing here all the necessary
 #installment needed to run the django testing.
-
-        pip3 install --user django
-         python manage.py test
