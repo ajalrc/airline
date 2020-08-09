@@ -59,14 +59,6 @@ class FlightTestCase(TestCase):
         self.assertEqual(response.status_code,200)#and thus this should
 #have a status code of 200.
 
-    def test_invalid_flight_page(self):
-        max_id=Flight.objects.all().aggregate(Max("id"))["id__max"]#this is
-        print(f"Max id is :{max_id}")
-#the django command["id__max"] to get the max id in the page.
-        c=Client()
-        response=c.get(f"/flights/{max_id + 1}")
-        self.assertEqual(response.staus_code,404)#this is the flight that
-#doesn't exist cause the id exists the flight number
     def test_flight_page_passengers(self):
         f=Flight.objects.get(pk=1)#added a sample passenger
         p=Passenger.objects.create(first="Alice",last="Adams")
