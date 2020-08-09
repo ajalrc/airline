@@ -1,0 +1,13 @@
+{%extends "users/layout.html"%}
+{%block body%}
+<!--here for some reason,  I am not able to get the firstname but userna
+me and email would be displayed after successful login.See the request.
+user.username and email are the way to get those and see the url redirection
+pattern-->
+    <h1>Welcome, {{request.user.first_name}}</h1>
+        <ul>
+            <li>Username :{{request.user.username}}</li>
+            <li>Email:{{request.user.email}}</li>
+        </ul>
+<a href="{%url 'login' %}">Logout</a>
+{%endblock%}

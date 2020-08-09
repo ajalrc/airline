@@ -1,0 +1,18 @@
+{%extends "flights/layout.html"%}
+{%block body%}
+    <h1>Flights</h1>
+    <ul>
+<!--Below, I am calling all the flights in Django database which is in
+object format and I can draw the id, origin and so on.-->
+        {% for flight in flights %}
+<!--Here flight .id can be used as a parameter to go to that spec.
+ flight. Here I would like to use id as a required parameter.-->
+            <li>
+                <a href="{ % url 'flight' flight.id %}">
+                    Flight {{flight.id}}: {{flight.origin}} to {{flight.destination}}
+                </a> 
+            </li>
+        {%endfor%}
+    </ul>
+
+{%endblock%}

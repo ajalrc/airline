@@ -1,0 +1,21 @@
+name: Testing #this is just the name of the workflow
+on: push # this indicades when the code should run indicating push here saying
+#that anytime someone push their code to github, we would like to run this
+#workflow.
+#everywork consists of some jobs so here we are describing the jobs below.
+jobs:
+  test_project: #this test_project is just a job name which can be anything
+#for a job need to specify 2 things to happen which are what sort of machine
+#is the job going to run on cause github has its own virtual machines
+    runs-on: ubuntu-latest #and here I am saying just run in the latest
+#version of ubuntu. and then I need to specify what steps should happen
+    steps:
+      - uses: actions/checkout@v2 #here I am using a particular github
+#action that just go to the github repository and checkout the code.
+      - name: Run Django unit tests #this is just the name to know what is 
+#going on.
+        run: | #to run django unittest, I am installing here all the necessary
+#installment needed to run the django testing.
+
+        pip3 install --user django
+         python manage.py test

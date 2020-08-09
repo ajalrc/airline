@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    <title>Counter</title>
+    </head>
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            let counter=0;
+            document.querySelector('#increase').onclick=()=>{//this func
+//will be called when the increse function is clicked.
+                counter++;
+                document.querySelector('h1').innerHTML=counter
+            }
+            document.querySelector('#decrease').onclick=()=>{//this func
+//will be called when the decrease function is clicked.
+                counter--;
+                document.querySelector('h1').innerHTML=counter//set the 
+//innerHTML value equal to the counter's value 
+            }
+
+        })
+    </script>
+    <body>
+        <h1>0</h1>
+        <button id ="increase">+</button>
+        <button id = "decrease">-</button>
+    </body>
+</html>

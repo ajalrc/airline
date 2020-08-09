@@ -1,0 +1,16 @@
+{%extends "users/layout.html" %}
+{%block body%}
+<!--here if there is a message then it will be printed.-->
+    {%if message%}
+        <div>{{message}}</div>
+    {%endif%}
+<!--Here I am using the post method because I don't want the username and pp
+to be saved as it would be saved in the url when get method is used and after 
+the form is submitted, I am redirecting it to the login page.-->
+        <form action="{%url 'login' %}" method="POST">
+            {%csrf_token%}
+            <input type="text" name="username" placeholder="Username">
+            <input type="passenger" name="password" placeholder="Password">
+            <input type="submit"  value="login">
+        </form>
+{%endblock%}
